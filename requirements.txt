@@ -1,5 +1,5 @@
 #---master---#
-#Telethroid==0.0.10
+Telethroid==0.0.10
 PyLeaves==1.0.2
 
 #--Main----#
@@ -19,10 +19,11 @@ motor==2.5.1
 #---ytdl----#
 youtube-search-python
 youtube-search
-yt-dlp==2023.2.17
+yt-dlp
 
 #---imdb---#
 git+https://github.com/cinemagoer/cinemagoer
+imdbpy==2021.4.18
 
 #---others----#
 opencv-python-headless==4.7.0.68
@@ -39,7 +40,4 @@ wheel
 ujson
 wget
 pytz
-
-
-
-
+shortzy
