@@ -581,7 +581,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂', callback_data='coct')
             ],[                       
             InlineKeyboardButton('𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷', callback_data='tele'),
-            InlineKeyboardButton('SONGS', callback_data='songs')
+            InlineKeyboardButton('SONGS', callback_data='songs'),
             InlineKeyboardButton('VIDEO', callback_data='video')
             ],[           
             InlineKeyboardButton('𝙹𝚂𝙾𝙽𝙴', callback_data='son'),
@@ -598,7 +598,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton('𝙲𝙰𝚁𝙱𝙾𝙽', callback_data='carb'),
             InlineKeyboardButton('𝙵𝙾𝙽𝙳', callback_data='fond'),
-            InlineKeyboardButton('UPDATES', url='https://t.me/Epic_creation_bots')
+            InlineKeyboardButton('ᴏᴡɴᴇʀ, url='https://t.me/Hatmateinc')
             ],[
             InlineKeyboardButton('🔮 𝚂𝚃𝙰𝚃𝚄𝚂 🔮', callback_data='stats')
             ],[
