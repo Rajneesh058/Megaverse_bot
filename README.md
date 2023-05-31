@@ -1,21 +1,16 @@
-![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=𝗪𝗘𝗟𝗖𝗢𝗠+𝗧𝗢+𝐏𝐑𝐎𝐅𝐄𝐒𝐒𝐎𝐑+𝐁𝐎𝐓!;𝗖𝗥𝗘𝗔𝗧𝗘𝗗+𝗕𝗬+𝗧𝗘𝗔𝗠+𝗣𝗥𝗢𝗙𝗘𝗦𝗦𝗢𝗥+𝗕𝗢𝗧!;𝗔+𝗦𝗜𝗠𝗣𝗟𝗘+𝗧𝗚+𝗔𝗨𝗧𝗢𝗙𝗜𝗟𝗧𝗘𝗥+𝗕𝗢𝗧!)</p>
 <p align="center">
-  <img src="Logo/PROFESSOR-BOT.jpeg" alt="MKN BOTZ LOGO">
+  <img src="https://graph.org/file/e8a93db57425e8cd7d417.jpg" alt="Ajax Techz">
 </p>
 <h1 align="center">
-  <b> 𝐏𝐑𝐎𝐅𝐄𝐒𝐒𝐎𝐑 𝐁𝐎𝐓</b>
+  <b>Movie-Finder-bot</b>
 </h1>
+<a href="https://youtube.com/channel/UCFDpDpnOgcoztiiIkjnJYfw">
+  <img src="https://user-images.githubusercontent.com/105805201/193200984-945641aa-05c9-41ce-b6a2-13a876a8832b.svg" width="150">
 
-[![Stars](https://img.shields.io/github/stars/MrMKN/PROFESSOR-BOT?style=flat-square&color=yellow)](https://github.com/MrMKN/PROFESSOR-BOT/stargazers)
-[![Forks](https://img.shields.io/github/forks/MrMKN/PROFESSOR-BOT?style=flat-square&color=orange)](https://github.com/MrMKN/PROFESSOR-BOT/fork)
-[![Size](https://img.shields.io/github/repo-size/MrMKN/PROFESSOR-BOT?style=flat-square&color=green)](https://github.com/MrMKN/PROFESSOR-BOT)   
-[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/MrMKN/PROFESSOR-BOT)   
-[![Contributors](https://img.shields.io/github/contributors/MrMKN/PROFESSOR-BOT?style=flat-square&color=green)](https://github.com/MrMKN/PROFESSOR-BOT/graphs/contributors)
-[![License](https://img.shields.io/badge/License-AGPL-blue)](https://github.com/MrMKN/PROFESSOR-BOT/blob/main/LICENSE)
-[![Sparkline](https://stars.medv.io/MrMKN/PROFESSOR-BOT.svg)](https://stars.medv.io/MrMKN/PROFESSOR-BOT)
-
-
-
+[![Stars](https://user-images.githubusercontent.com/105805201/193201047-3d9aa592-1c4e-4b17-8e0d-e3cfcc66176c.svg)](https://github.com/Moviesindna/moviefinderbot/stargazers)
+[![Forks](https://user-images.githubusercontent.com/105805201/193201090-73f7ff5d-be1d-4668-8a31-6f544aab9dba.svg)](https://github.com/Moviesindna/moviefinderbot/network/members)
+[![Size](https://user-images.githubusercontent.com/105805201/193201170-b389f999-c07e-4d0f-8aee-5701a6263fbc.svg)](https://github.com/Moviesindna/moviefinderbot)   
+[![Open Source happy ](https://user-images.githubusercontent.com/105805201/193201236-21414dcf-8978-4fb3-b53c-c6c2dc846a53.svg)](https://github.com/Moviesindna/moviefinderbot)   
 ## Features
 
 - [x] Auto Filter
@@ -30,24 +25,20 @@
 - [x] ids and User info 
 - [x] Stats, Users, Chats, Ban, Unban, Leave, Disable, Channel
 - [x] Spelling Check Feature
-- [x] Custom File Caption
-- [x] Group Broadcast 
-- [x] AutoFilter auto delete
-- [x] Junk Group & users clearing on database 
-- [x] Global Filter
-- [x] Url Shortner in AutoFilter 
-- [x] Custom Button Lock
-- [x] image editor & background remover
-- [x] Telegraph, pin, json, password generator
-- [x] Ban, mute, unmute, etc... Group manager 
-- [x] Custom Welcome message
-- [x] Advanced Admin Panel
-- [x] Photo Changing in All buttons
-- [x] Custom Start message
-- [x] Custom Button Alter message
-- [x] advanced status (disk, cpu, ram, uptime..)
- 
+- [x] Movie, Song, Yt video Download
+- [x] photo Editor
+- [x] Pin, Kick, block, user in Chat
+- [x] Edit Font Of Your Text
+- [x] Text To Speach 
+- [x] Telegraph Link For Files
+- [x] File Store
+- [x] Image To Link Converter
+- [x] Single Group/User Messanger
+- [x] set Template In Group
+- [x] Get Id Of User/Group
+- [x] Manage Groups
 
+## Variables
 
 ### Required Variables
 * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
@@ -55,77 +46,97 @@
 * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `CHANNELS`: Username or ID of channel or group. Separate multiple IDs by space
 * `ADMINS`: Username or ID of Admin. Separate multiple Admins by space
-* `DATABASE_URI`: [mongoDB](https://www.mongodb.com) URI. Get this value from [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/1G1XwEOnxxo)
-* `DATABASE_NAME`: Name of the database in [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/1G1XwEOnxxo)
+* `DATABASE_URI`: [mongoDB](https://www.mongodb.com) URI. Get this value from [mongoDB](https://www.mongodb.com).
+* `DATABASE_NAME`: Name of the database in [mongoDB](https://www.mongodb.com). For more help watch this 
 * `LOG_CHANNEL` : A channel to log the activities of bot. Make sure bot is an admin in the channel.
-* `Support Chat` : Username of a Support Group / ADMIN. ( Should be username without @ and not ID
+* `AUTH_CHANNEL` : ID of channel.Make sure bot is admin in this channel. Without subscribing this channel users cannot use bot.
+* `RemoveBG_API` : background remover website api key. get from https://www.remove.bg/b/background-removal-api
 ### Optional Variables
 * `PICS`: Telegraph links of images to show in start message.( Multiple images can be used seperated by space )
-* `USE_CAPTION_FILTER` : Whether bot should use captions to improve search results. (True False)
-* `CUSTOM_FILE_CAPTION` : A custom file caption for your files. formatable with , file_name, file_caption, file_size, Read Readme.md for better understanding
-* `CACHE_TIME` : The maximum amount of time in seconds that the result of the inline query may be cached on the server
-* `IMDB` : Imdb, the view of information when making True/False
-* `SINGLE_BUTTON` : choose b/w single or double buttons 
-* `P_TTI_SHOW_OFF` : Customize Result Buttons to Callback or Url by (True = url / False = callback)
-### Url Shortner Variable
-* `SHORT_URL` : Url Of Shortner Site You Use
-* `SHORT_API` : Api Key Of Shortner Which You Use
+* `CUSTOM_FILE_CAPTION` : A custom file caption for your files. formatable with , file_name, file_caption, file_size, Read Readme.md for better understanding.
+* `START_MESSAGE` : bot start message text [ {user} = bot startd user name {bot} = your bot name
+
+## Deploy
+You can deploy this bot anywhere.
+
+<i>**[HOW TO DEPLOY WTCH THIS VIDEO...](https://youtu.be/v7Vbu3u_VrE)**</i>
 
 
-## Deploy to Heroku
+<details><summary>Deploy To Koyeb</summary>
+<p>
+<br>
 
-<a href="https://youtu.be/uv0WHxwHwfo"><img src="https://img.shields.io/badge/watch%20Heroku%20Tutorial-red.svg?logo=Youtube"></a>                     
+<a href="https://app.koyeb.com/deploy?type=git&repository=github.com/LazyDeveloperr/LazyPrincess&branch=master&name=lazyprincessbot">
+  <img src="https://user-images.githubusercontent.com/114851821/227539568-66584c8e-d117-4233-acfc-dcb3f7a02a88.svg" alt="Deploy">
+</a>
+</p>
+</details>
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/MrMKN/PROFESSOR-BOT)
+<details><summary>Deploy To Render</summary>
+<p>
+<br>
 
-## Deploy to Koyeb
+<a href="https://render.com/deploy">
+  <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy">
+</a>
+</p>
+</details>
 
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/MrMKN/PROFESSOR-BOT&env[WEBHOOK]=True&env[BOT_TOKEN]&env[API_ID]&env[API_HASH]&env[CHANNELS]&env[ADMINS]&env[PICS]&env[LOG_CHANNEL]&env[AUTH_CHANNEL]&env[MAX_RIST_BTNS]=10&env[CUSTOM_FILE_CAPTION]&env[DATABASE_URI]&env[DATABASE_NAME]=MknBotz&env[COLLECTION_NAME]=Telegram_files&env[SUPPORT_CHAT]&env[IMDB]=True&env[PM_IMDB]=True&env[IMDB_TEMPLATE]&env[IMDB_DELET_TIME]=900&env[SINGLE_BUTTON]=True&env[START_MESSAGE]&env[FORCE_SUB_TEXT]&env[AUTH_GROUPS]&env[WELCOM_PIC]&env[WELCOM_TEXT]&env[BUTTON_LOCK_TEXT]&env[PMFILTER]=True&env[G_FILTER]=True&env[BUTTON_LOCK]=True&env[SHORT_API]&env[SHORT_URL]&env[RemoveBG_API]&env[P_TTI_SHOW_OFF]=True&run_command=python%20bot.py&branch=main&name=mr-rofessor)              
+<details><summary>Deploy To VPS</summary>
+<p>
+<pre>
+git clone https://github.com/Moviesindna/moviefinderbot
+# Install Packages
+pip3 install -r requirements.txt
+Edit info.py with variables as given below then run bot
+python3 bot.py
+</pre>
+</p>
+</details>
 
-## Deploy to Railway
-
-🙏 create button your self
 
 ## Commands
 ```
-start - check bot alive
-ping - pong
-settings - get settings 
-logs - to get the rescent errors
-stats - to get status of files in db.
-filter - add manual filters
-filters - view filters
-connect - connect to PM.
-disconnect - disconnect from PM
-del - delete a filter
-delall - delete all filters
-deleteall - delete all index(autofilter)
-delete - delete a specific file from index.
-info - get user info
-id - get tg ids.
-imdb - fetch info from imdb.
-users - to get list of my users and ids.
-chats - to get list of the my chats and ids 
-index  - to add files from a channel
-leave  - to leave from a chat.
-disable  -  do disable a chat.
-enable - re-enable chat.
-ban_user  - to ban a user.
-unban_user  - to unban a user.
-channel - to get list of total connected channels
-broadcast - to broadcast a message to all Eva Maria users
-
-
-clear_junk - clear all delete account & blocked account in database 
-clear_junk_group - clear add removed group or deactivated groups on db
+/start - check bot alive
+/stats - to get status of files in db.
+/group_broadcast - to broadcast message to all Groups
+/song - To download Mp3 Songs
+/video - To download Video From Yt
+/settings - get settings 
+/logs - to get the rescent errors
+/filter - add manual filters
+/filters - view filters
+/connect - connect to PM.
+/disconnect - disconnect from PM
+/del - delete a filter
+/delall - delete all filters
+/deleteall - delete all index(autofilter)
+/delete - delete a specific file from index.
+/info - get user info
+/id - get tg ids.
+/imdb - fetch info from imdb.
+/users - to get list of my users and ids.
+/chats - to get list of the my chats and ids 
+/index  - to add files from a channel
+/leave  - to leave from a chat.
+/disable  -  do disable a chat.
+/enable - re-enable chat.
+/ban_user  - to ban a user.
+/unban_user  - to unban a user.
+/channel - to get list of total connected channels
+/broadcast - to broadcast a message to all FP BOT users
+/font - to change the font of your text
+/carbon - edit your image with your text.
+/tts - text to speech 
+/json - do download bot json
+/telegraph - reply me with this command to get link of image
+/purge - to delete all replied message 
+/ping - pong
+/set_template - To set template In group
+/usend - Send Message To Single user
+/gsend - send Message To single Group
 ```
 
-## TELAGRAM SUPPORT 
-
-* [![MKN BOTZ](https://img.shields.io/static/v1?label=MKN&message=BOTZ&color=critical)](https://t.me/mkn_bots_updates)
-
-## Disclaimer
-[![GNU Affero General Public License 2.0](https://www.gnu.org/graphics/agplv3-155x51.png)](https://www.gnu.org/licenses/agpl-3.0.en.html#header)    
-Licensed under [GNU AGPL 2.0.](https://github.com/EvamariaTG/evamaria/blob/master/LICENSE)
-Selling The Codes To Other People For Money Is *Strictly Prohibited*.
-
+𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁 👉 [Rajneesh Singh Tomar ](https://t.me/Rajneesh_Singh_Tomar)                                                                                                                                                                                 
+𝙲𝙷𝙰𝙽𝙽𝙴𝙻 👉 [Movie Megaverse](https://t.me/Movie_Megaverse_Official)
+Demo Bot 👉 [Megaverse Bot](https://t.me/movie_f_bot)
