@@ -9,13 +9,13 @@ from time import time
 
 id_pattern = re.compile(r'^.\d+$')
 def is_enabled(value, default):
-    if value.strip().lower() in ["true", "yes", "1", "enable", "y"]:
+    if value.strip().lower() in ["on", "true", "yes", "1", "enable", "y"]:
         return True
-    elif value.strip().lower() in ["false", "no", "0", "disable", "n"]:
+    elif value.strip().lower() in ["off", "false", "no", "0", "disable", "n"]:
         return False
     else:
         return default
-
+        
 # Bot information
 PORT = environ.get("PORT", "8080")
 WEBHOOK = bool(environ.get("WEBHOOK", True)) # for web support on/off
@@ -67,6 +67,7 @@ LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Epic_creation_bots')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
+PM_IMDB = environ.get('PM_IMDB', "True")
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "\n<b>🏷️ Tɪᴛʟᴇ :- <code>{}</code>\n⚙️ Sɪᴢᴇ :- {}\n🕵️‍♂️ Rᴇǫᴜᴇsᴛᴇᴅ Bʏ :- {}\n🔅 Pᴏᴡᴇʀᴇᴅ Bʏ :- {}\n<a href='https://t.me/Movie_Megaverse_Backup'</a></b>")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", None)
