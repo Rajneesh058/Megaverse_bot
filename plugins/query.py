@@ -598,7 +598,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton('𝙲𝙰𝚁𝙱𝙾𝙽', callback_data='carb'),
             InlineKeyboardButton('𝙵𝙾𝙽𝙳', callback_data='fond'),
-            InlineKeyboardButton('ᴏᴡɴᴇʀ, url='https://t.me/Hatmateinc')
+            InlineKeyboardButton('ᴏᴡɴᴇʀ', url='https://t.me/Hatmateinc')
             ],[
             InlineKeyboardButton('🔮 𝚂𝚃𝙰𝚃𝚄𝚂 🔮', callback_data='stats')
             ],[
