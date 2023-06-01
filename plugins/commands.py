@@ -67,16 +67,14 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton("Join Updates Channel", url=invite_link.invite_link)
-            ],[
-                InlineKeyboardButton(" Tʀʏ Aɢᴀɪɴ", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")]
             ]
         if message.command[1] != "subscribe":
             try:
                 kk, file_id = message.command[1].split("_", 1)
                 pre = 'checksubp' if kk == 'filep' else 'checksub' 
-                reply_markup=InlineKeyboardMarkup(btn)
+                btn.append([InlineKeyboardButton(" 🔄 Try Again", callback_data=f"{pre}#{file_id}")])
             except (IndexError, ValueError):
-                reply_markup=InlineKeyboardMarkup(btn)
+                btn.append([InlineKeyboardButton(" 🔄 Try Again", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
             text=FORCE_SUB_TEXT,
