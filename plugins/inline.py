@@ -34,6 +34,12 @@ async def answer(bot, query):
         await query.answer(results=[],
                            cache_time=0,
                            switch_pm_text='You have to subscribe my channel to use the bot',
+        btn = [
+            [
+                InlineKeyboardButton("Join Updates Channel", url=invite_link.invite_link)
+            ],[
+                InlineKeyboardButton(" Tʀʏ Aɢᴀɪɴ", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")]
+            ],
                            switch_pm_parameter="subscribe")
         return
 
