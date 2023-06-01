@@ -64,9 +64,12 @@ async def start(client, message):
         except ChatAdminRequired:
             logger.error("Make sure Bot is admin in Forcesub channel")
             return
-        btn = [[
+        btn = [
+            [
                 InlineKeyboardButton("Join Updates Channel", url=invite_link.invite_link)
-            ]]
+            ],[
+                InlineKeyboardButton(" Tʀʏ Aɢᴀɪɴ", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")]
+            ]
         if message.command[1] != "subscribe":
             try:
                 kk, file_id = message.command[1].split("_", 1)
