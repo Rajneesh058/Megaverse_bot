@@ -75,6 +75,8 @@ async def start(client, message):
                 kk, file_id = message.command[1].split("_", 1)
                 pre = 'checksubp' if kk == 'filep' else 'checksub' 
                 reply_markup=InlineKeyboardMarkup(btn)
+            except (IndexError, ValueError):
+                reply_markup=InlineKeyboardMarkup(btn)
         await client.send_message(
             chat_id=message.from_user.id,
             text=FORCE_SUB_TEXT,
