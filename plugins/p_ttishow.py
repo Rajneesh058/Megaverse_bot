@@ -46,7 +46,7 @@ async def save_group(bot, message):
             reply_markup=reply_markup)
     else:
         settings = await get_settings(message.chat.id)
-            if settings["welcome"]:
+         if settings["welcome"]:
             for u in message.new_chat_members:
                 if (temp.WELCOM).get('welcome') is not None:
                     try:
@@ -67,7 +67,7 @@ async def save_group(bot, message):
 
     else:
         settings = await get_settings(message.chat.id)
-            if settings["leave"]:
+          if settings["leave"]:
             for u in message.new_chat_members:
                 if (temp.BYE).get('leave') is not None:
                     try:
