@@ -1,21 +1,21 @@
 import os
-
 from pyrogram import Client, filters
-
-from pyrogram.types import Message, User
+from pyrogram.types import Message, User,InlineKeyboardButton,InlineKeyboardMarkup
+from info import WELCOM_TEXT, BYE_TEXT
 
 @Client.on_message(filters.new_chat_members)
-
 async def welcome(bot,message):
-
-	chatid= message.chat.id	await bot.send_message(text=f"Welcome {message.from_user.mention} to {message.chat.username} ,  Happy to have here",chat_id=chatid)
-
-	
-
+	chatid= message.chat.id	await bot.send_message(text=WELCOM_TEXT)
+         btn.insert(0, [
+            InlineKeyboardButton('BOT CHANNEL', url='https://t.me/Epic_creation_bots'),
+            InlineKeyboardButton('UPDATES', url='https://t.me/Movie_Megaverse_Backup')
+        ]
 @Client.on_message(filters.left_chat_member)
-
 async def goodbye(bot,message):
-
 	chatid= message.chat.id
-
-	await bot.send_message(text=f"Bye 👋,  {message.from_user.mention} , Have a Nice Day",chat_id=chatid)
+	await bot.send_message(text=BYE_TEXT)
+    
+    btn.insert(0, [
+            InlineKeyboardButton('BOT CHANNEL', url='https://t.me/Epic_creation_bots'),
+            InlineKeyboardButton('UPDATES', url='https://t.me/Movie_Megaverse_Backup')
+        ]

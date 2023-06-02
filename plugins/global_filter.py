@@ -148,8 +148,3 @@ async def delallgfill(client, message):
 async def dellacbd(client, message):
     await del_allg(message.message, 'gfilters')
     return await message.reply("👍 Done")
-
-
-
-
-
