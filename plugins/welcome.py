@@ -5,8 +5,9 @@ from info import WELCOM_TEXT, BYE_TEXT
 
 @Client.on_message(filters.new_chat_members)
 async def welcome(bot,message):
-	chatid= message.chat.id	await bot.send_message(text=WELCOM_TEXT)
-         btn.insert(0, [
+	chatid= message.chat.id
+	await bot.send_message(text=WELCOM_TEXT)
+    btn.insert(0, [
             InlineKeyboardButton('BOT CHANNEL', url='https://t.me/Epic_creation_bots'),
             InlineKeyboardButton('UPDATES', url='https://t.me/Movie_Megaverse_Backup')
         ]
