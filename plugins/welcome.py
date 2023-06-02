@@ -7,7 +7,7 @@ from info import WELCOM_TEXT, BYE_TEXT
 async def welcome(bot,message):
 	chatid= message.chat.id
 	await bot.send_message(text=WELCOM_TEXT)
-    btn.insert(0, [
+        btn.insert(0, [
             InlineKeyboardButton('BOT CHANNEL', url='https://t.me/Epic_creation_bots'),
             InlineKeyboardButton('UPDATES', url='https://t.me/Movie_Megaverse_Backup')
         ]
@@ -16,7 +16,7 @@ async def goodbye(bot,message):
 	chatid= message.chat.id
 	await bot.send_message(text=BYE_TEXT)
     
-    btn.insert(0, [
+       btn.insert(0, [
             InlineKeyboardButton('BOT CHANNEL', url='https://t.me/Epic_creation_bots'),
             InlineKeyboardButton('UPDATES', url='https://t.me/Movie_Megaverse_Backup')
         ]
