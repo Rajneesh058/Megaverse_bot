@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
-from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, WELCOM_PIC, WELCOM_TEXT, BYE_TEXT
+from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, WELCOM_PIC, WELCOM_TEXT
 from database.users_chats_db import db
 from database.ia_filterdb import Media
 from utils import get_size, temp
@@ -45,47 +45,18 @@ async def save_group(bot, message):
             text=f"<b>›› 𝚃𝙷𝙰𝙽𝙺𝚂 𝚃𝙾 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿.\n›› 𝙳𝙾𝙽'𝚃 𝙵𝙾𝚁𝙶𝙴𝚃 𝚃𝙾 𝙼𝙰𝙺𝙴 𝙼𝙴 𝙰𝙳𝙼𝙸𝙽.\n›› 𝙸𝚂 𝙰𝙽𝚈 𝙳𝙾𝚄𝙱𝚃𝚂 𝙰𝙱𝙾𝚄𝚃 𝚄𝚂𝙸𝙽𝙶 𝙼𝙴 𝙲𝙻𝙸𝙲𝙺 𝙱𝙴𝙻𝙾𝚆 𝙱𝚄𝚃𝚃𝙾𝙽..⚡⚡.</b>",
             reply_markup=reply_markup)
     else:
-        settings = await get_settings(message.chat.id)
-            if settings["welcome"]:
-            for u in message.new_chat_members:
-                if (temp.WELCOM).get('welcome') is not None:
-                    try:
-                        await (temp.WELCOM['welcome']).delete()
-                    except:
-                        pass
-                temp.WELCOM['welcome'] = await message.reply_video(
-                                                 video=(WELCOM_VID),
-                                                 caption=(script.WELCOM_TEXT.format(u.mention, message.chat.title)),
-                                                 reply_markup=InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton('BOT CHANNEL', url='https://t.me/Epic_creation_bots'),
-            InlineKeyboardButton('UPDATES', url='https://t.me/Movie_Megaverse_Backup')
-        ]]
-                                                 ),
-                                                 parse_mode=enums.ParseMode.HTML
-                )
+        for u in message.new_chat_members:
+            if (temp.MELCOW).get('welcome') is not None:
+                try:
+                    await (temp.MELCOW['welcome']).delete()
+                except:
+                    pass
+            if WELCOM_PIC:
+                temp.MELCOW['welcome'] = await message.reply_photo(photo=WELCOM_PIC, caption=WELCOM_TEXT.format(user=u.mention, chat=message.chat.title))
+            else:
+                temp.MELCOW['welcome'] = await message.reply_text(text=WELCOM_TEXT.format(user=u.mention, chat=message.chat.title))
 
-    else:
-        settings = await get_settings(message.chat.id)
-            if settings["leave"]:
-            for u in message.new_chat_members:
-                if (temp.BYE).get('leave') is not None:
-                    try:
-                        await (temp.BYE['leave']).delete()
-                    except:
-                        pass
-                temp.BYE['leave'] = await message.reply_video(
-                                                 video=(WELCOM_VID),
-                                                 caption=(script.BYE_TEXT.format(u.mention, message.chat.title)),
-                                                 reply_markup=InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton('BOT CHANNEL', url='https://t.me/Epic_creation_bots'),
-            InlineKeyboardButton('UPDATES', url='https://t.me/Movie_Megaverse_Backup')
-        ]]
-                                                 ),
-                                                 parse_mode=enums.ParseMode.HTML
-                )
-                
+
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
     if len(message.command) == 1:
