@@ -45,27 +45,27 @@ async def save_group(bot, message):
             caption=(ADG.format(message.from_user.mention, message.chat.title)),
             reply_markup=reply_markup)
     else:
-        settings = await get_settings(message.chat.id)
-        if settings["welcome"]:
-            for u in message.new_chat_members:
-                if (temp.MELCOW).get('welcome') is not None:
-                    try:
-                        await (temp.MELCOW['welcome']).delete()
-                    except:
-                        pass
-                temp.MELCOW['welcome'] = await message.reply_video(
-                                                 video=(WELCOM_VID),
-                                                 caption=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
-                                                 reply_markup=InlineKeyboardMarkup(                               [[
-                                                                           InlineKeyboardButton('🎭ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ🎭',url='https://t.me/+Dek49ihM4u5iNWQ1')
-                                                                          ]]
-                                                 ),
-                                                 parse_mode=enums.ParseMode.HTML
+        for u in message.new_chat_members:
+            if (temp.MELCOW).get('welcome') is not None:
+                try:
+                    await (temp.MELCOW['welcome']).delete()
+                except:
+                    pass
+            if WELCOM_PIC:
+                temp.MELCOW['welcome'] = await message.reply_photo(photo=WELCOM_PIC, caption=WELCOM_TEXT.format(user=u.mention, chat=message.chat.title),
+                reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton('🎭ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ🎭',url='https://t.me/+Dek49ihM4u5iNWQ1')]),
+                
+            else:
+                temp.MELCOW['welcome'] = await message.reply_text(text=WELCOM_TEXT.format(user=u.mention, chat=message.chat.title)),
+                reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton('🎭ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ🎭',url='https://t.me/+Dek49ihM4u5iNWQ1')]]
+                ),
+                parse_mode=enums.ParseMode.HTML
                 )
                 
         if settings["auto_delete"]:
             await asyncio.sleep(300)
             await (temp.MELCOW['welcome']).delete()
+                
     
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
