@@ -54,18 +54,17 @@ async def save_group(bot, message):
             if WELCOM_PIC:
                 temp.MELCOW['welcome'] = await message.reply_photo(photo=WELCOM_PIC, caption=WELCOM_TEXT.format(user=u.mention, chat=message.chat.title),
                 reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton('🎭ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ🎭',url='https://t.me/+Dek49ihM4u5iNWQ1')]]),
-                
+       
     else:
-          temp.MELCOW['welcome'] = await message.reply_text(text=WELCOM_TEXT.format(user=u.mention, chat=message.chat.title)),
-          reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton('🎭ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ🎭',url='https://t.me/+Dek49ihM4u5iNWQ1')]]
+                temp.MELCOW['welcome'] = await message.reply_text(text=WELCOM_TEXT.format(user=u.mention, chat=message.chat.title)),
+                reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton('🎭ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ🎭',url='https://t.me/+Dek49ihM4u5iNWQ1')]]
                 ),
                 parse_mode=enums.ParseMode.HTML
                 )
                 
-    if settings["auto_delete"]:
-         await asyncio.sleep(300)
-         await (temp.MELCOW['welcome']).delete()
-                
+        if settings["auto_delete"]:
+            await asyncio.sleep(300)
+            await (temp.MELCOW['welcome']).delete()
     
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
