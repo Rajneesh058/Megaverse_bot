@@ -48,13 +48,12 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 #maximum search result buttos count in number#
 MAX_RIST_BTNS = int(environ.get('MAX_RIST_BTNS', "10"))
-START_MESSAGE = environ.get('START_MESSAGE', 'Hᴇʏ {user}\n\nI ᴀᴍ 🄱🄾🅃 🄶🄾🄳 🄵🄰🅃🄷🄴🅁\n\nɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ʏᴏᴜʀ ꜰᴀᴠᴏᴜʀɪᴛᴇ ᴍᴏᴠɪᴇꜱ🎭\n\nCʟɪᴄᴋ ᴏɴ ᴍᴏʀᴇ ꜰᴇᴀᴛᴜʀᴇꜱ ᴛᴏ ɢᴇᴛ ᴍᴏʀᴇ ꜰᴇᴀᴛᴜʀᴇꜱ\n\nᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : @Hatmateinc')
+
 BUTTON_LOCK_TEXT = environ.get("BUTTON_LOCK_TEXT", "⚠️ 𝙃𝙚𝙮 {query}! 𝙏𝙝𝙖𝙩'𝙨 𝙉𝙤𝙩 𝙁𝙤𝙧 𝙔𝙤𝙪. 𝙋𝙡𝙚𝙖𝙨𝙚 𝙍𝙚𝙦𝙪𝙚𝙨𝙩 𝙔𝙤𝙪𝙧 𝙊𝙬𝙣")
 FORCE_SUB_TEXT = environ.get('FORCE_SUB_TEXT', 'Jᴏɪɴ  Official ᴄʜᴀɴɴᴇʟ ᴛᴏ Proceed 🔐')
 RemoveBG_API = environ.get("RemoveBG_API", "")
 WELCOM_VID = environ.get("WELCOM_VID", "https://telegra.ph/Guy-06-01 https://telegra.ph/Fhh-06-01")
-WELCOM_TEXT = environ.get("WELCOM_TEXT", "Hay 👋 {user}....😎\nwelcome to Our Group {chat}...\n😎You Can Find 🔍 Movies / Series / Animes etc.")
-BYE_TEXT = environ.get("BYE_TEXT", "Bye 👋 {user}....😎\nThanks For Coming...\n😎Come Again If you like The Service.")
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE","🏷 ᴛɪᴛᴛʟᴇ :{title}\n🔮 ʀᴇʟᴇᴀs ᴇ: {year} \n⏰ ᴅᴜʀᴀᴛɪᴏɴ : {runtime}\n⭐️ ʀᴀᴛɪɴɢ : {rating}/ 10\n  🎭  ɢᴇɴʀᴇ: {genres} \n\n🎊 ᴘᴏᴡᴇʀᴇᴅ ʙʏ [[𝗠𝗢𝗩𝗜𝗘 𝗠𝗘𝗚𝗔𝗩𝗘𝗥𝗦𝗘]](https://t.me/Movie_Megaverse_Backup)"
 PMFILTER = environ.get('PMFILTER', "True")
 G_FILTER = bool(environ.get("G_FILTER", True))
 BUTTON_LOCK = environ.get("BUTTON_LOCK", "True")
@@ -72,9 +71,9 @@ P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 PM_IMDB = environ.get('PM_IMDB', "True")
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "\n<b>🏷️ Tɪᴛʟᴇ :- <code>{}</code>\n⚙️ Sɪᴢᴇ :- {}\n🕵️‍♂️ Rᴇǫᴜᴇsᴛᴇᴅ Bʏ :- {}\n🔅 Pᴏᴡᴇʀᴇᴅ Bʏ :- {}\n<a href='https://t.me/Movie_Megaverse_Backup'</a></b>")
+
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", None)
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "🧿 ᴛɪᴛᴛʟᴇ :  {title} \n🌟 ʀᴀᴛɪɴɢ : {rating} \n🎭 ɢᴇɴʀᴇ : {genres} \n📆 ʀᴇʟᴇᴀsᴇ : {year} \n⏰ ᴅᴜʀᴀᴛɪᴏɴ : {runtime} \n🎙ʟᴀɴɢᴜᴀɢᴇ : {languages} \n★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : Movie_Megaverse_Backup")
+
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
 INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
