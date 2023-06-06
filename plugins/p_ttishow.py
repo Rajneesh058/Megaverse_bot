@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
-from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, WELCOM_VID, WELCOM_TEXT
+from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, WELCOM_VID
 from database.users_chats_db import db
 from database.ia_filterdb import Media
 from utils import get_size, temp
@@ -35,37 +35,40 @@ async def save_group(bot, message):
                 pass
             await bot.leave_chat(message.chat.id)
             return
-        buttons = [[
-            InlineKeyboardButton('ʜᴇʟᴘ', url=f"https://t.me/{temp.U_NAME}?start=help"),
-            InlineKeyboardButton('🎭ᴍᴏᴠɪᴇ ᴜᴘᴅᴀᴛᴇ🎭', url='https://t.me/+Dek49ihM4u5iNWQ1')
-        ],[InlineKeyboardButton(' ʙᴏᴛ ᴄʜᴀɴɴᴇʟ ', url='https://t.me/Epic_creation_bots')]]
+        buttons = [
+            [
+                InlineKeyboardButton('𝙷𝙾𝚆 𝚃𝙾 𝚄𝚂𝙴 𝙼𝙴', url=f"https://t.me/{temp.U_NAME}?start=help")
+            ]
+            ]
         reply_markup=InlineKeyboardMarkup(buttons)
-        await message.reply_photo(
-            photo=(PHT),
-            caption=(ADG.format(message.from_user.mention, message.chat.title)),
+        await message.reply_text(
+            text=f"<b>›› 𝚃𝙷𝙰𝙽𝙺𝚂 𝚃𝙾 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿.\n›› 𝙳𝙾𝙽'𝚃 𝙵𝙾𝚁𝙶𝙴𝚃 𝚃𝙾 𝙼𝙰𝙺𝙴 𝙼𝙴 𝙰𝙳𝙼𝙸𝙽.\n›› 𝙸𝚂 𝙰𝙽𝚈 𝙳𝙾𝚄𝙱𝚃𝚂 𝙰𝙱𝙾𝚄𝚃 𝚄𝚂𝙸𝙽𝙶 𝙼𝙴 𝙲𝙻𝙸𝙲𝙺 𝙱𝙴𝙻𝙾𝚆 𝙱𝚄𝚃𝚃𝙾𝙽..⚡⚡.</b>",
             reply_markup=reply_markup)
     else:
-        for u in message.new_chat_members:
-            if (temp.MELCOW).get('welcome') is not None:
-                try:
-                    await (temp.MELCOW['welcome']).delete()
-                except:
-                    pass
-            if WELCOM_PIC:
-                temp.MELCOW['welcome'] = await message.reply_photo(photo=WELCOM_PIC, caption=WELCOM_TEXT.format(user=u.mention, chat=message.chat.title),
-                reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton('🎭ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ🎭',url='https://t.me/+Dek49ihM4u5iNWQ1')]]),
-       
-    else:
-                temp.MELCOW['welcome'] = await message.reply_text(text=WELCOM_TEXT.format(user=u.mention, chat=message.chat.title)),
-                reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton('🎭ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ🎭',url='https://t.me/+Dek49ihM4u5iNWQ1')]]
-                ),
-                parse_mode=enums.ParseMode.HTML
+        settings = await get_settings(message.chat.id)
+        if settings["welcome"]:
+            for u in message.new_chat_members:
+                if (temp.MELCOW).get('welcome') is not None:
+                    try:
+                        await (temp.MELCOW['welcome']).delete()
+                    except:
+                        pass
+                temp.MELCOW['welcome'] = await message.reply_video(
+                                                 video=(WELCOM_VID),
+                                                 caption=(script.WELCOM_TEXT.format(u.mention, message.chat.title)),
+                                                 reply_markup=InlineKeyboardMarkup(
+        [[
+            InlineKeyboardButton('🧩 𝖲𝖴𝖯𝖯𝖮𝖱𝖳 🧩', url=f"https://t.me/{SUPPORT_CHAT}"),
+            InlineKeyboardButton('⚡𝖴𝗉𝖽𝖺𝗍𝖾𝗌 ⚡', url="https://t.me/movie_megaverse_backup")
+        ]]
+                                                 ),
+                                                 parse_mode=enums.ParseMode.HTML
                 )
                 
         if settings["auto_delete"]:
             await asyncio.sleep(300)
             await (temp.MELCOW['welcome']).delete()
-    
+                
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
     if len(message.command) == 1:
