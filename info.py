@@ -54,6 +54,7 @@ FORCE_SUB_TEXT = environ.get('FORCE_SUB_TEXT', 'Jᴏɪɴ  Official ᴄʜᴀɴɴ�
 RemoveBG_API = environ.get("RemoveBG_API", "")
 WELCOM_VID = environ.get("WELCOM_VID", "https://telegra.ph/Guy-06-01 https://telegra.ph/Fhh-06-01")
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE","🏷 ᴛɪᴛᴛʟᴇ :{title}\n🔮 ʀᴇʟᴇᴀs ᴇ: {year} \n⏰ ᴅᴜʀᴀᴛɪᴏɴ : {runtime}\n⭐️ ʀᴀᴛɪɴɢ : {rating}/ 10\n  🎭  ɢᴇɴʀᴇ: {genres} \n\n🎊 ᴘᴏᴡᴇʀᴇᴅ ʙʏ [[𝗠𝗢𝗩𝗜𝗘 𝗠𝗘𝗚𝗔𝗩𝗘𝗥𝗦𝗘]](https://t.me/Movie_Megaverse_Backup)")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", '📂 <em>File Name</em>: <code>|{file_name}</code> \n\n🖇 <em>File Size</em>: <code>{file_size}</code> \n\n❤️‍🔥 </i>Join</i> [𝗠𝗢𝗩𝗜𝗘 𝗠𝗘𝗚𝗔𝗩𝗘𝗥𝗦𝗘](https://t.me/Movie_Megaverse_Backup)  \n\n🖥 <i>Requests</i> - [𝗥𝗘𝗤𝗨𝗘𝗦𝗧 𝗚𝗥𝗢𝗨𝗣](https://t.me/movie_request_group_058) ')
 PMFILTER = environ.get('PMFILTER', "True")
 G_FILTER = bool(environ.get("G_FILTER", True))
 BUTTON_LOCK = environ.get("BUTTON_LOCK", "True")
