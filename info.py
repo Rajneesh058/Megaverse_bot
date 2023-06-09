@@ -28,7 +28,7 @@ BOT_TOKEN = environ['BOT_TOKEN']
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
-PICS = (environ.get('PICS' ,'https://telegra.ph/Fhh-06-01 https://telegra.ph/Guy-06-01 https://telegra.ph/Hvv-06-01')).split()
+PICS = (environ.get('PICS' ,'https://telegra.ph/Fhh-06-01,https://telegra.ph/Guy-06-01,https://telegra.ph/Hvv-06-01')).split()
 BOT_START_TIME = time()
 
 # Admins, Channels & Users
@@ -52,7 +52,7 @@ MAX_RIST_BTNS = int(environ.get('MAX_RIST_BTNS', "10"))
 BUTTON_LOCK_TEXT = environ.get("BUTTON_LOCK_TEXT", "⚠️ 𝙃𝙚𝙮 {query}! 𝙏𝙝𝙖𝙩'𝙨 𝙉𝙤𝙩 𝙁𝙤𝙧 𝙔𝙤𝙪. 𝙋𝙡𝙚𝙖𝙨𝙚 𝙍𝙚𝙦𝙪𝙚𝙨𝙩 𝙔𝙤𝙪𝙧 𝙊𝙬𝙣")
 FORCE_SUB_TEXT = environ.get('FORCE_SUB_TEXT', 'Jᴏɪɴ  Official ᴄʜᴀɴɴᴇʟ ᴛᴏ Proceed 🔐')
 RemoveBG_API = environ.get("RemoveBG_API", "")
-WELCOM_VID = environ.get("WELCOM_VID", "https://telegra.ph/Guy-06-01 https://telegra.ph/Fhh-06-01")
+WELCOM_VID = environ.get("WELCOM_VID", "https://telegra.ph/Guy-06-01,https://telegra.ph/Fhh-06-01")
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE","🏷 ᴛɪᴛᴛʟᴇ :{title}\n🔮 ʀᴇʟᴇᴀs ᴇ: {year} \n⏰ ᴅᴜʀᴀᴛɪᴏɴ : {runtime}\n⭐️ ʀᴀᴛɪɴɢ : {rating}/ 10\n  🎭  ɢᴇɴʀᴇ: {genres} \n\n🎊 ᴘᴏᴡᴇʀᴇᴅ ʙʏ [[𝗠𝗢𝗩𝗜𝗘 𝗠𝗘𝗚𝗔𝗩𝗘𝗥𝗦𝗘]](https://t.me/Movie_Megaverse_Backup)")
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", '📂 <em>File Name</em>: <code>|{file_name}</code> \n\n🖇 <em>File Size</em>: <code>{file_size}</code> \n\n❤️‍🔥 </i>Join</i> [𝗠𝗢𝗩𝗜𝗘 𝗠𝗘𝗚𝗔𝗩𝗘𝗥𝗦𝗘](https://t.me/Movie_Megaverse_Backup)  \n\n🖥 <i>Requests</i> - [𝗥𝗘𝗤𝗨𝗘𝗦𝗧 𝗚𝗥𝗢𝗨𝗣](https://t.me/movie_request_group_058) ')
 PMFILTER = environ.get('PMFILTER', "True")
