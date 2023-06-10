@@ -367,8 +367,4 @@ BYE_TEXT ="""Bye 👋 {user}....
 <b><u>😎Thanks For Coming...</u></b>
 <i>😎Come Again If you like The Service</i>"""
 
-START_MESSAGE =    """Hᴇʏ {user}
-    <b><u> I ᴀᴍ 🄱🄾🅃 🄶🄾🄳 🄵🄰🅃🄷🄴🅁</u></b>
-    <i> ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ʏᴏᴜʀ ꜰᴀᴠᴏᴜʀɪᴛᴇ ᴍᴏᴠɪᴇꜱ🎭</i>
-     <i>Cʟɪᴄᴋ ᴏɴ ᴍᴏʀᴇ ꜰᴇᴀᴛᴜʀᴇꜱ ᴛᴏ ɢᴇᴛ ᴍᴏʀᴇ ꜰᴇᴀᴛᴜʀᴇꜱ</i>
-    <b>ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : @Hatmateincts</b>"""
+
