@@ -165,7 +165,7 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
         btn.append(
             [InlineKeyboardButton(text="📄 𝗣𝗮𝗴𝗲 1/1", callback_data="pages")]
         )
-       btn.insert(0, [
+        btn.insert(0, [
 
             InlineKeyboardButton("JOIN CHANNEL", url="https://t.me/Movie_Megaverse_Backup"),
 
