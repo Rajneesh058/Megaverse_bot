@@ -108,7 +108,7 @@ async def pm_spoll_tester(bot, query):
     _, user, movie_ = query.data.split('#')
     if movie_ == "close_spellcheck":
         rturn await query.message.delete()
-    movies = PM_SPELL_CHECK.get(query.message.reply_to_message.id)
+    movies = temp.PM_SPELL.get(str(query.message.reply_to_message.id))
     if not movies:
         return await query.answer("You are clicking on an old button which is expired.", show_alert=True)
     movie = movies[(int(movie_))]
@@ -155,8 +155,8 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
                     InlineKeyboardButton(text=f"{get_size(file.file_size)}", callback_data=f'{pre}#{file.file_id}')] for file in files ]  
         
     if offset != "":
-        key = f"{message.chat.id}-{message.id}"
-        PM_BUTTONS[key] = search
+        key = f"{message.id}"
+        temp.PM_BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f"📄 𝗣𝗮𝗴𝗲 1/{math.ceil(int(total_results) / 6)}", callback_data="pages"),
@@ -173,7 +173,7 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
             InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{temp.U_NAME}")
 
         ])
-    if PM_IMDB.strip().lower() in ["true", "yes", "1", "enable", "y"]:
+    if PM_IMDB:
         imdb = await get_poster(search)
     else:
         imdb = None
@@ -216,22 +216,22 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
         cap = f"Here is what i found for your query {search}"
     if imdb and imdb.get('poster'):
         try:
-            hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(IMDB_DELET_TIME)
             await hehe.delete()            
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))           
+            hmm = await message.reply_photo(photo=poster, caption=cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))           
             await asyncio.sleep(IMDB_DELET_TIME)
             await hmm.delete()            
         except Exception as e:
             logger.exception(e)
-            cdp = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+            cdp = await message.reply_text(cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(IMDB_DELET_TIME)
             await cdp.delete()
     else:
-        abc = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+        abc = await message.reply_text(cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(IMDB_DELET_TIME)
         await abc.delete()        
     if pmspoll:
@@ -276,14 +276,14 @@ async def pm_spoll_choker(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("I couldn't find anything related to that. Check your spelling")
+        k = await msg.reply("I couldn't find anything related to that. Check your spelling", quote=True)
         await asyncio.sleep(8)
         await k.delete()
         return
-    PM_SPELL_CHECK[msg.id] = movielist
+    temp.PM_SPELL[str(msg.id)] = movielist
     btn = [[InlineKeyboardButton(text=movie.strip(), callback_data=f"pmspolling#{user}#{k}")] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'pmspolling#{user}#close_spellcheck')])
-    await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?", reply_markup=InlineKeyboardMarkup(btn), reply_to_message_id=msg.id)
+    await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?", reply_markup=InlineKeyboardMarkup(btn), quote=True)
 
 
 
