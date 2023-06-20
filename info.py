@@ -55,9 +55,9 @@ RemoveBG_API = environ.get("RemoveBG_API", "")
 WELCOM_VID = environ.get("WELCOM_VID", "https://telegra.ph/Guy-06-01,https://telegra.ph/Fhh-06-01")
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE","🏷 ᴛɪᴛᴛʟᴇ :{title}\n🔮 ʀᴇʟᴇᴀs ᴇ: {year} \n⏰ ᴅᴜʀᴀᴛɪᴏɴ : {runtime}\n⭐️ ʀᴀᴛɪɴɢ : {rating}/ 10\n  🎭  ɢᴇɴʀᴇ: {genres} \n\n🎊 ᴘᴏᴡᴇʀᴇᴅ ʙʏ [[𝗠𝗢𝗩𝗜𝗘 𝗠𝗘𝗚𝗔𝗩𝗘𝗥𝗦𝗘]](https://t.me/Movie_Megaverse_Backup)")
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", '📂 <em>File Name</em>: <code>|{file_name}</code> \n\n🖇 <em>File Size</em>: <code>{file_size}</code> \n\n❤️‍🔥 </i>Join</i> [𝗠𝗢𝗩𝗜𝗘 𝗠𝗘𝗚𝗔𝗩𝗘𝗥𝗦𝗘](https://t.me/Movie_Megaverse_Backup)  \n\n🖥 <i>Requests</i> - [𝗥𝗘𝗤𝗨𝗘𝗦𝗧 𝗚𝗥𝗢𝗨𝗣](https://t.me/movie_request_group_058) ')
-PMFILTER = environ.get('PMFILTER', "True")
-G_FILTER = bool(environ.get("G_FILTER", True))
-BUTTON_LOCK = environ.get("BUTTON_LOCK", "True")
+PMFILTER = is_enabled(environ.get('PMFILTER', "True"), True)
+G_FILTER = is_enabled(environ.get("G_FILTER", True), True)
+BUTTON_LOCK = is_enabled(environ.get("BUTTON_LOCK", "True"), True)
 START_MESSAGE = environ.get('START_MESSAGE', 'Hᴇʏ {user},\n\nI ᴀᴍ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴏᴠɪᴇ🎭 ꜰɪɴᴅᴇʀ & ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ ʙᴏᴛ🤖\n\nCʟɪᴄᴋ ᴏɴ Hᴇʟᴘ ᴛᴏ ɢᴇᴛ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ\n\nᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : @Hatmateinc')
 
 # url shortner
@@ -69,10 +69,10 @@ IMDB_DELET_TIME = int(environ.get('IMDB_DELET_TIME', "300"))
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Epic_creation_bots')
-P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
+P_TTI_SHOW_OFF = is_enabled(environ.get('P_TTI_SHOW_OFF', "True"), True)
 PM_IMDB = environ.get('PM_IMDB', "True")
-IMDB = is_enabled((environ.get('IMDB', "True")), True)
-SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
+IMDB = is_enabled(environ.get('IMDB', "True"), True)
+SINGLE_BUTTON = is_enabled(environ.get('SINGLE_BUTTON', "True"), True)
 
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", None)
 
@@ -83,16 +83,3 @@ FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "True")), True)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
 PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
-
-#request force sub
-REQ_SUB = bool(environ.get("REQ_SUB", True))
-SESSION_STRING = environ.get("SESSION_STRING", "")
-
-
-
-
-
-
-
-
-
