@@ -107,7 +107,7 @@ async def pm_next_page(bot, query):
 async def pm_spoll_tester(bot, query):
     _, user, movie_ = query.data.split('#')
     if movie_ == "close_spellcheck":
-        rturn await query.message.delete()
+        return await query.message.delete()
     movies = temp.PM_SPELL.get(str(query.message.reply_to_message.id))
     if not movies:
         return await query.answer("You are clicking on an old button which is expired.", show_alert=True)
