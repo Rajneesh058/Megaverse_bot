@@ -29,19 +29,19 @@ async def auto_pm_fill(b, m):
     elif PMFILTER.strip().lower() in ["false", "no", "0", "disable", "n"]:
         return 
 
-@Client.on_callback_query(filters.regex("pmnext"))
+@Client.on_callback_query(filters.create(lambda _, __, query: query.data.startswith("pmnext")))
 async def pm_next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     try:
         offset = int(offset)
     except:
         offset = 0
-    search = PM_BUTTONS.get(key)
+    
+    search = temp.PM_BUTTONS.get(str(key))
     if not search:
-        await query.answer("You are using one of my old messages, please send the request again.", show_alert=True)
-        return
+        return await query.answer("You are using one of my old messages, please send the request again.", show_alert=True)
 
-    files, n_offset, total = await get_search_results(search, offset=offset, filter=True)
+    files, n_offset, total = await get_search_results(search.lower(), offset=offset, filter=True)
     try:
         n_offset = int(n_offset)
     except:
@@ -63,6 +63,7 @@ async def pm_next_page(bot, query):
             btn = [[InlineKeyboardButton(text=f"{file.file_name}", callback_data=f'pmfile#{file.file_id}'),
                     InlineKeyboardButton(text=f"{get_size(file.file_size)}", callback_data=f'pmfile#{file.file_id}')] for file in files ]
 
+    
     if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
@@ -106,7 +107,7 @@ async def pm_next_page(bot, query):
 async def pm_spoll_tester(bot, query):
     _, user, movie_ = query.data.split('#')
     if movie_ == "close_spellcheck":
-        return await query.message.delete()
+        rturn await query.message.delete()
     movies = PM_SPELL_CHECK.get(query.message.reply_to_message.id)
     if not movies:
         return await query.answer("You are clicking on an old button which is expired.", show_alert=True)
