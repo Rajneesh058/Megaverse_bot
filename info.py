@@ -70,7 +70,7 @@ LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Epic_creation_bots')
 P_TTI_SHOW_OFF = is_enabled(environ.get('P_TTI_SHOW_OFF', "True"), True)
-PM_IMDB = environ.get('PM_IMDB', "True")
+IMDB = is_enabled(environ.get('IMDB', "True"), True)
 PM_IMDB = is_enabled(environ.get('PM_IMDB', "True"), True)
 SINGLE_BUTTON = is_enabled(environ.get('SINGLE_BUTTON', "True"), True)
 
