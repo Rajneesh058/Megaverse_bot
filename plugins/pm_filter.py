@@ -14,20 +14,16 @@ from plugins.group_filter import global_filters
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 
-PM_BUTTONS = {}
-PM_SPELL_CHECK = {}
-
 @Client.on_message(filters.private & filters.text & filters.chat(AUTH_USERS) if AUTH_USERS else filters.text & filters.private)
 async def auto_pm_fill(b, m):
-    if PMFILTER.strip().lower() in ["true", "yes", "1", "enable", "y"]:       
+    if PMFILTER:       
         if G_FILTER:
             kd = await global_filters(b, m)
             if kd == False:
                 await pm_AutoFilter(b, m)
         else:      
             await pm_AutoFilter(b, m)
-    elif PMFILTER.strip().lower() in ["false", "no", "0", "disable", "n"]:
-        return 
+    elif: return 
 
 @Client.on_callback_query(filters.create(lambda _, __, query: query.data.startswith("pmnext")))
 async def pm_next_page(bot, query):
@@ -88,11 +84,8 @@ async def pm_next_page(bot, query):
             ],
         )
         btn.insert(0, [
-
             InlineKeyboardButton("JOIN CHANNEL", url="https://t.me/Movie_Megaverse_Backup"),
-
             InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{temp.U_NAME}")
-
         ])
     try:
         await query.edit_message_reply_markup(
@@ -103,7 +96,7 @@ async def pm_next_page(bot, query):
     await query.answer()
 
 
-@Client.on_callback_query(filters.regex("pmspolling"))
+@Client.on_callback_query(filters.create(lambda _, __, query: query.data.startswith("pmspolling")))
 async def pm_spoll_tester(bot, query):
     _, user, movie_ = query.data.split('#')
     if movie_ == "close_spellcheck":
@@ -167,11 +160,8 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
             [InlineKeyboardButton(text="📄 𝗣𝗮𝗴𝗲 1/1", callback_data="pages")]
         )
         btn.insert(0, [
-
             InlineKeyboardButton("JOIN CHANNEL", url="https://t.me/Movie_Megaverse_Backup"),
-
             InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{temp.U_NAME}")
-
         ])
     if PM_IMDB:
         imdb = await get_poster(search)
@@ -247,7 +237,7 @@ async def pm_spoll_choker(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I couldn't find any movie in that name.")
+        k = await msg.reply("I couldn't find any movie in that name.", quote=True)
         await asyncio.sleep(8)
         await k.delete()
         return
