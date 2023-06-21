@@ -5,7 +5,7 @@ from utils import get_shortlink
 import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, make_inactive
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, PM_IMDB, SINGLE_BUTTON, PROTECT_CONTENT, \
-    SPELL_CHECK_REPLY, IMDB_TEMPLATE, IMDB_DELET_TIME, PMFILTER, G_FILTER, BUTTON_LOCK, BUTTON_LOCK_TEXT, SHORT_URL, SHORT_API
+    SPELL_CHECK_REPLY, IMDB_TEMPLATE, IMDB_DELET_TIME, START_MESSAGE, PMFILTER, G_FILTER, BUTTON_LOCK, BUTTON_LOCK_TEXT, SHORT_URL, SHORT_API
 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters, enums 
@@ -24,7 +24,6 @@ logger.setLevel(logging.ERROR)
 FILTER_MODE = {}
 G_MODE = {}
 SPELL_CHECK = {}
-
 
 @Client.on_message(filters.command('autofilter') & filters.group & admin_fliter)
 async def fil_mod(client, message): 
@@ -72,8 +71,8 @@ async def g_fil_mod(client, message):
           await m.edit("𝚄𝚂𝙴 :- `/g_filter on` 𝙾𝚁 `/g_filter off`")
 
 
-@Client.on_callback_query(filters.create(lambda _, __, query: query.data.startswith("spolling")))
-async def advantage_spoll_choker(bot, query):
+@Client.on_callback_query(filters.create(lambda _, __, query: query.data.startswith("next")))
+async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
         return await query.answer("oKda", show_alert=True)
@@ -83,7 +82,7 @@ async def advantage_spoll_choker(bot, query):
         offset = 0
     search = temp.GP_BUTTONS.get(key)
     if not search:
-        await query.answer("You are using one of my old messages, please send the request again.", show_alert=True)
+        await query.answer("🤔 You are using one of my old messages, please send the request again.", show_alert=True)
         return
 
     files, n_offset, total = await get_search_results(search, offset=offset, filter=True)
@@ -133,10 +132,7 @@ async def advantage_spoll_choker(bot, query):
                 InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
-        btn.insert(0, [
-            InlineKeyboardButton("JOIN CHANNEL", url="https://t.me/Movie_Megaverse_Backup"),
-            InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{temp.U_NAME}")
-        ])
+    
     try:
         await query.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(btn)
@@ -150,7 +146,7 @@ async def advantage_spoll_choker(bot, query):
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer("NO Such File Exists.", show_alert=True)
+        return await query.answer("okDa", show_alert=True)
     if movie_ == "close_spellcheck":
         return await query.message.delete()
     movies = temp.GP_SPELL.get(query.message.reply_to_message.id)
@@ -229,10 +225,7 @@ async def auto_filter(client, msg, spoll=False):
         else:
             btn = [[InlineKeyboardButton(text=f"{file.file_name}", callback_data=f'{pre}#{req}#{file.file_id}'),
                     InlineKeyboardButton(text=f"{get_size(file.file_size)}", callback_data=f'{pre}#{req}#{file.file_id}')] for file in files ] 
-        btn.insert(0, [
-            InlineKeyboardButton("JOIN CHANNEL", url="https://t.me/Movie_Megaverse_Backup"),
-            InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{temp.U_NAME}")
-        ])
+
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
         temp.GP_BUTTONS[key] = search
