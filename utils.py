@@ -17,9 +17,7 @@ import requests, aiohttp
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-BTN_URL_REGEX = re.compile(
-    r"(\[([^\[]+?)\]\((buttonurl|buttonalert):(?:/{0,2})(.+?)(:same)?\))"
-)
+BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\((buttonurl|buttonalert):(?:/{0,2})(.+?)(:same)?\))")
 
 imdb = Cinemagoer() 
 
@@ -40,8 +38,10 @@ class temp(object):
     B_NAME = None
     B_LINK = None
     SETTINGS = {}
-    BUTTONS = {}
-
+    GP_BUTTONS = {}
+    PM_BUTTONS = {}
+    PM_SPELL = {}
+    GP_SPELL = {}
 
 async def is_subscribed(bot, query):
     try:
