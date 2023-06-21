@@ -23,7 +23,7 @@ async def auto_pm_fill(b, m):
                 await pm_AutoFilter(b, m)
         else:      
             await pm_AutoFilter(b, m)
-    elif: return 
+    else: return
 
 @Client.on_callback_query(filters.create(lambda _, __, query: query.data.startswith("pmnext")))
 async def pm_next_page(bot, query):
